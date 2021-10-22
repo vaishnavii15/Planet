@@ -31,3 +31,21 @@ faders.forEach(fader => {
 sliders.forEach(slider => {
     appearOnScroll.observe(slider);
 });
+
+
+
+
+
+function scrollpage() {
+    function f() {
+        window.scrollTo(0, i);
+        if (status == 0) {
+            i = i + 1;
+            if (i >= Height) { status = 1; }
+        }
+        setTimeout(f, 0.05);
+    } f();
+}
+var Height = document.documentElement.scrollHeight;
+var i = 1, j = Height, status = 0;
+scrollpage()
